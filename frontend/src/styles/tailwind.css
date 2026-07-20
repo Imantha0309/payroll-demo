@@ -1,0 +1,97 @@
+@import '../assets/scss/style.scss';
+@import '../index.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom layer mapping React-Bootstrap classnames to Tailwind equivalents */
+@layer components {
+  /* Grid Layouts */
+  .row {
+    @apply flex flex-wrap -mx-3;
+  }
+  
+  .col {
+    @apply flex-1 px-3;
+  }
+  
+  .col-12 {
+    @apply w-full px-3;
+  }
+  
+  .align-items-center {
+    @apply items-center;
+  }
+  
+  .text-center {
+    @apply text-center;
+  }
+
+  /* Margin Spacing mappings */
+  .mb-3 {
+    @apply mb-3;
+  }
+  
+  .mb-4 {
+    @apply mb-4;
+  }
+  
+  .mt-3 {
+    @apply mt-3;
+  }
+
+  /* Fluid Image */
+  .img-fluid {
+    @apply max-w-full h-auto;
+  }
+
+  /* Input Groups & Form Controls */
+  .input-group {
+    @apply relative flex flex-wrap items-stretch w-full;
+  }
+  
+  .input-group-text {
+    @apply flex items-center px-3 py-2 text-base font-normal text-gray-700 text-center bg-gray-100 border border-solid border-gray-300 rounded-l focus:outline-none;
+  }
+  
+  .form-control {
+    @apply block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white border border-solid border-gray-300 rounded-r transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none;
+  }
+  
+  /* Buttons */
+  .btn {
+    @apply inline-block font-normal text-center align-middle select-none border border-transparent px-3 py-2 text-base leading-normal rounded transition ease-in-out focus:outline-none;
+  }
+  
+  .btn-block {
+    @apply w-full block;
+  }
+
+  /* Card Layouts */
+  .card {
+    @apply relative flex flex-col min-w-0 break-words bg-white border border-solid border-gray-200 rounded;
+  }
+  
+  .card-body {
+    @apply flex-auto p-6;
+  }
+
+  /* List Groups */
+  .list-group {
+    @apply flex flex-col pl-0 mb-0;
+  }
+  
+  .list-group-item {
+    @apply relative block px-4 py-3 bg-white border border-solid border-gray-200;
+  }
+
+  /* Alerts */
+  .alert {
+    @apply relative px-4 py-3 mb-4 border border-solid rounded;
+  }
+  
+  .alert-danger {
+    @apply text-red-700 bg-red-100 border-red-200;
+  }
+}
