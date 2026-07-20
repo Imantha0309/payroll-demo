@@ -1,0 +1,227 @@
+.flat-card {
+  .row-table {
+    display: table;
+    align-items: center;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    .br {
+      border-right: 1px solid var(--bs-border-color);
+    }
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    h5 {
+      display: block;
+      margin-bottom: 0.3em;
+      margin-right: 0;
+    }
+
+    > [class*='col-'] {
+      display: table-cell;
+      float: none;
+      table-layout: fixed;
+      vertical-align: middle;
+
+      .row {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &[class*='widget-'] {
+    .row-table {
+      display: flex;
+    }
+  }
+}
+
+/* Modern Dashboard Styles */
+.kpi-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid rgba(224, 224, 224, 0.7);
+  border-radius: 5px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    border-color: rgba(8, 63, 122, 0.214);
+  }
+
+  .kpi-icon-wrapper {
+    width: 46px;
+    height: 46px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    i {
+      font-size: 1.5rem;
+      color: #0f172a !important;
+      font-weight: 900;
+    }
+  }
+
+  .kpi-info {
+    display: flex;
+    flex-direction: column;
+
+    .kpi-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.15;
+    }
+
+    .kpi-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #64748b;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+  }
+}
+
+.modern-dashboard-tabs {
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  .tab-item {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 2px 2px 0 0;
+
+    &:hover {
+      color: #007bff;
+      background: rgba(0, 123, 255, 0.03);
+    }
+
+    &.active {
+      color: #007bff;
+      font-weight: 700;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2.5px;
+        background: #007bff;
+        border-radius: 2px 2px 0 0;
+      }
+    }
+  }
+}
+
+.compact-status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dashboard-root {
+  margin-top: -35px;
+}
+
+.compact-status-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 0.45rem 0.6rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.01);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 74px;
+  gap: 0.25rem;
+
+  &:hover {
+    transform: translateY(-1.75px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .status-header {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.15rem;
+    width: 100%;
+
+    i {
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #334155;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .status-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: auto;
+    width: 100%;
+  }
+}
+
+.applications-tab-row {
+  .applications-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
