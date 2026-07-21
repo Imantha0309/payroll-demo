@@ -8,20 +8,18 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
-
+        Schema::create('shifts', function (Blueprint $table) {
             $table->id();
-
-            $table->string('name')
-                  ->unique();
-
+            $table->string('name', 50)->unique();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
 
-
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('shifts');
     }
 };
