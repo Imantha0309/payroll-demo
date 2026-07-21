@@ -13,11 +13,8 @@ class User extends Authenticatable
 
     protected $fillable = [
         'role_id',
-        'designation_id',
         'username',
         'full_name',
-        'phone_no',
-        'nic',
         'password',
         'is_active',
     ];
@@ -32,14 +29,6 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
-    }
-
-    /**
-     * User belongs to one designation
-     */
-    public function designation()
-    {
-        return $this->belongsTo(Designation::class, 'designation_id');
     }
 
     /**
