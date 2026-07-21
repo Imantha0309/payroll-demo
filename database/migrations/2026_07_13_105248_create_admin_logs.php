@@ -14,40 +14,12 @@ return new class extends Migration
         Schema::create('admin_logs', function(Blueprint $table){
 
             $table->id();
-
-
-            $table->unsignedBigInteger('session_id')
-                  ->nullable();
-
-
-            $table->string('module')
-                  ->nullable();
-
-
-            $table->string('action_type')
-                  ->nullable();
-
-
-            $table->string('performed_by')
-                  ->nullable();
-
-
-            $table->string('employee_id')
-                  ->nullable();
-
-
-            $table->string('employee_name')
-                  ->nullable();
-
-
-            $table->text('details')
-                  ->nullable();
-
-
-            $table->string('log')
-                  ->nullable();
-
-
+            $table->unsignedBigInteger('session_id');
+            $table->string('module',100)->nullable();
+            $table->string('action_type', 100)->nullable();
+            $table->string('performed_by', 100);
+            $table->text('details')->nullable();
+            $table->string('log', 500)->nullable();
             $table->timestamps();
 
         });

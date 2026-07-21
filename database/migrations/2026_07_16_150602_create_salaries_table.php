@@ -10,16 +10,13 @@ return new class extends Migration
     {
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
-
-
-            $table->string('month', 10);
+            $table->unsignedBigInteger('employee_id');
+            $table->string('month');
             $table->date('start_date');
             $table->date('end_date');
-
-            $table->unsignedInteger('no_of_attendances');
-            $table->unsignedInteger('total_working_time');
-            $table->unsignedInteger('total_ot_time');
-
+            $table->unsignedInteger('no_of_attendances', 2);
+            $table->unsignedInteger('total_working_time', 3);//save as minutes
+            $table->unsignedInteger('total_ot_time', 3);//save as minutes
             $table->unsignedDecimal('basic_salary', 12, 2);
             $table->unsignedDecimal('total_no_pay_amount', 12, 2);
             $table->unsignedDecimal('total_other_deduction', 12, 2);
