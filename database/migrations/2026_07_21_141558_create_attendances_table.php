@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('check_date');
             $table->date('check_in');
             $table->date('check_out');            
-            $table->enum('type', ['sample1', 'sample2']);
+            $table->enum('type', ['Leave', 'Half Day']);
             $table->unsignedInteger('working_time', 3);//save as minutes
             $table->unsignedInteger('ot_time', 3);//save as minutes   
             $table->string('updated_method', 100); 
