@@ -22,8 +22,8 @@ return new class extends Migration
 
             //session
             $table->unsignedBigInteger('employee_id');
-            $table->unsignedBigInteger('session_id');                  // FK -> login_sessions (created by)
-            $table->unsignedBigInteger('updated_session_id');          // FK -> login_sessions (updated by)
+            $table->unsignedBigInteger('session_id');
+            $table->unsignedBigInteger('updated_session_id');
 
             $table->timestamps();
 
