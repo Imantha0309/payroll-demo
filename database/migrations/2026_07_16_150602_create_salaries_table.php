@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -12,9 +11,9 @@ return new class extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('employee_id');
-            $table->string('month', 10);
-            $table->date('start_date',10);
-            $table->date('end_date',10);
+            $table->string('month');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->unsignedInteger('no_of_attendances', 2);
             $table->unsignedInteger('total_working_time', 3);//save as minutes
             $table->unsignedInteger('total_ot_time', 3);//save as minutes

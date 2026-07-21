@@ -14,10 +14,11 @@ class CreateLoginSessionsTable extends Migration
         Schema::create('login_sessions', function (Blueprint $table) {
             $table->id(); // Primary key
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
             $table->dateTime('login_time'); // Precise login timestamp
             $table->dateTime('logout_time')->nullable(); // Nullable for active sessions
             $table->ipAddress('ip_address')->nullable(); // Nullable for active sessions
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
