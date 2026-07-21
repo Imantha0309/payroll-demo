@@ -24,27 +24,24 @@ return new class extends Migration
             $table->unsignedDecimal('total_deduction', 12, 2);
             $table->unsignedDecimal('gross_salary', 12, 2);
             $table->unsignedDecimal('net_salary', 12, 2);
+
             $table->string('remark', 500)->nullable();
-            
-            //payment info
+
             $table->boolean('is_paid')->default(false);
             $table->dateTime('paid_date')->nullable();
 
-            //approval info
             $table->boolean('is_approved')->default(false);
-            
-            //session info
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('updated_session_id');
 
-            //created and updated at
-            $table->timestamps();
+            $table->unsignedBigInteger('employee_id'); 
 
-            //foreign key defination
+            $table->timestamps();
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('session_id')->references('id')->on('login_sessions')->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('updated_session_id')->references('id')->on('login_sessions')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('updated_session_id')->references('id')->on('login_sessions') ->onDelete('restrict')->onUpdate('restrict');
 
+            
         });
     }
 
