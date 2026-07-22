@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('check_date');
             $table->date('check_in');
             $table->date('check_out');            
-            $table->enum('type', ['Leave', 'Half Day']);
+            $table->enum('type', ['Present','Leave', 'Half Day', 'Late']);
             $table->unsignedInteger('working_time', 3);//save as minutes
             $table->unsignedInteger('ot_time', 3);//save as minutes   
             $table->string('updated_method', 100); 
@@ -29,7 +29,7 @@ return new class extends Migration
 
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('fingerprint_upload_id')->references('id')->on('fingerprint_uploads')->onDelete('restrict')->onUpdate('cascade');
-            $table->foreign('fingerprint_device_id')->references('id')->on('sample')->onDelete('restrict')->onUpdate('cascade');
+           
         });
     }
 
